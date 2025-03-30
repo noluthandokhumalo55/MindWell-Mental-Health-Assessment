@@ -36,8 +36,11 @@ jobs:
       - name: List contents of the publish folder
         run: dir ./publish
 
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v3
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v2
         with:
-          name: published-app
-          path: ./publish/*
+          artifact_name: published-app
+          path: ./publish/
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v1
