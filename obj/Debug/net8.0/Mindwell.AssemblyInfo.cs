@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Mindwell")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+46683ef52716ee57ae8cdbce1918493cb2fed0e4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2d4c225758a76f55dd23dff14e3988c93caee4e7")]
 [assembly: System.Reflection.AssemblyProductAttribute("Mindwell")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Mindwell")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -207,3 +207,13 @@ D:\MindWell-Mental-Health-Assessment\obj\Debug\net8.0\refint\Mindwell.dll
 D:\MindWell-Mental-Health-Assessment\obj\Debug\net8.0\Mindwell.pdb
 D:\MindWell-Mental-Health-Assessment\obj\Debug\net8.0\Mindwell.genruntimeconfig.cache
 D:\MindWell-Mental-Health-Assessment\obj\Debug\net8.0\ref\Mindwell.dll
+D:\MindWell-Mental-Health-Assessment\bin\Debug\net8.0\publish\publish\web.config
+D:\MindWell-Mental-Health-Assessment\bin\Debug\net8.0\publish\web.config
+D:\MindWell-Mental-Health-Assessment\bin\Debug\net8.0\publish\appsettings.Development.json
+D:\MindWell-Mental-Health-Assessment\bin\Debug\net8.0\publish\appsettings.json
+D:\MindWell-Mental-Health-Assessment\bin\Debug\net8.0\publish\Mindwell.deps.json
+D:\MindWell-Mental-Health-Assessment\bin\Debug\net8.0\publish\Mindwell.runtimeconfig.json
+D:\MindWell-Mental-Health-Assessment\bin\Debug\net8.0\publish\publish\appsettings.Development.json
+D:\MindWell-Mental-Health-Assessment\bin\Debug\net8.0\publish\publish\appsettings.json
+D:\MindWell-Mental-Health-Assessment\bin\Debug\net8.0\publish\publish\Mindwell.deps.json
+D:\MindWell-Mental-Health-Assessment\bin\Debug\net8.0\publish\publish\Mindwell.runtimeconfig.json
