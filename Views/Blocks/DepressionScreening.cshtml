@@ -1,0 +1,221 @@
+﻿@model Mindwell.Models.DepressionScreeningModel
+
+@{
+    ViewData["Title"] = "Depression Screening";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 50px;
+            padding-bottom: 40px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #800080; /* Purple color */
+        }
+
+        .question-container {
+            padding: 20px;
+            margin-bottom: 30px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+            .question label {
+                font-weight: bold;
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            .question input[type="radio"] {
+                margin-right: 10px;
+            }
+
+        .timer {
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ff3333;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background-color: #800080; /* Purple color */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+            .btn:hover {
+                background-color: #4b0082; /* Darker purple color */
+            }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #777;
+        }
+
+            .footer a {
+                color: #800080;
+                text-decoration: none;
+            }
+
+                .footer a:hover {
+                    text-decoration: underline;
+                }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Depression Screening Assessment</h2>
+        <p>Please answer the following questions honestly. You have 5 minutes to complete the quiz.</p>
+
+        <div class="timer" id="timer">Time left: 5:00</div>
+
+        <form method="post" id="assessment-form">
+            <div class="question-container" id="question-container">
+                <!-- Question will be inserted dynamically here -->
+            </div>
+
+            <button type="button" class="btn" id="next-btn">Next</button>
+        </form>
+
+        <div class="footer">
+            <p>For help and support, visit <a href="#">Mental Health Resources</a>.</p>
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+            { text: "How often have you been bothered by little interest or pleasure in doing things?" },
+            { text: "How often have you felt down, depressed, or hopeless?" },
+            { text: "How often have you had trouble falling or staying asleep, or sleeping too much?" },
+            { text: "How often have you felt tired or had little energy?" },
+            { text: "How often have you had a poor appetite or overeating?" },
+            { text: "How often have you felt bad about yourself — or that you are a failure or have let yourself or your family down?" },
+            { text: "How often have you had trouble concentrating on things, such as reading the newspaper or watching television?" },
+            { text: "How often have you moved or spoken so slowly that other people could have noticed? Or the opposite — being so fidgety or restless that you have been moving around a lot more than usual?" },
+            { text: "How often have you thought that you would be better off dead, or of hurting yourself in some way?" }
+        ];
+
+        let currentQuestionIndex = 0;
+        let timeLeft = 300; // 5 minutes in seconds
+        let timerInterval;
+        let selectedAnswers = [];
+
+        const timerDisplay = document.getElementById("timer");
+        const questionContainer = document.getElementById("question-container");
+        const nextButton = document.getElementById("next-btn");
+
+        function updateTimer() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            timerDisplay.innerText = `Time left: ${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+
+            if (timeLeft === 0) {
+                clearInterval(timerInterval);
+                alert("Time is up! The assessment will be submitted automatically.");
+                document.getElementById("assessment-form").submit();
+            } else {
+                timeLeft--;
+            }
+        }
+
+        function displayQuestion() {
+            const question = questions[currentQuestionIndex];
+            questionContainer.innerHTML = `
+                    <div class="question">
+                        <label for="question${currentQuestionIndex}">${question.text}</label>
+                        <div>
+                            <input type="radio" name="question${currentQuestionIndex}" value="0" id="question${currentQuestionIndex}_0">
+                            <label for="question${currentQuestionIndex}_0">Not at all</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="question${currentQuestionIndex}" value="1" id="question${currentQuestionIndex}_1">
+                            <label for="question${currentQuestionIndex}_1">Several days</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="question${currentQuestionIndex}" value="2" id="question${currentQuestionIndex}_2">
+                            <label for="question${currentQuestionIndex}_2">More than half the days</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="question${currentQuestionIndex}" value="3" id="question${currentQuestionIndex}_3">
+                            <label for="question${currentQuestionIndex}_3">Nearly every day</label>
+                        </div>
+                    </div>
+                `;
+        }
+
+        function handleNextButtonClick() {
+            // Check if an answer has been selected
+            const selectedRadioButton = document.querySelector(`input[name="question${currentQuestionIndex}"]:checked`);
+            if (!selectedRadioButton) {
+                alert("Please select an answer before proceeding.");
+                return;
+            }
+
+            // Save the selected answer
+            selectedAnswers.push(parseInt(selectedRadioButton.value));
+
+            // Move to the next question or submit the form if it's the last question
+            currentQuestionIndex++;
+            if (currentQuestionIndex < questions.length) {
+                displayQuestion();
+            } else {
+                nextButton.innerText = "Submit";
+                nextButton.onclick = submitForm;
+            }
+        }
+
+        function submitForm() {
+            clearInterval(timerInterval);
+            let score = selectedAnswers.reduce((a, b) => a + b, 0);
+            alert(`Your depression score is: ${score} out of 27`);
+            // Submit the form or handle results here
+            document.getElementById("assessment-form").submit();
+        }
+
+        // Start the timer
+        timerInterval = setInterval(updateTimer, 1000);
+
+        // Display the first question initially
+        displayQuestion();
+
+        // Set up the "Next" button click handler
+        nextButton.addEventListener("click", handleNextButtonClick);
+    </script>
+
+</body>
+</html>

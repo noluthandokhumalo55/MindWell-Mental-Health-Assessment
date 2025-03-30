@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tyMPXB2Yv4kMvow//dXNGuSTs9AnWbeniGu6SFuZ18DDXoIlhULGyh4IIApmSogqnzQCL8m5SzCCpmU4eRpVYA==",
+  "dgSpecHash": "qFP4W3XdcK5RXJ5y//72Mv9Y6wHdXnGQpeu/qvyU5c00+hh4aRVMGLFwwly8TDVT09dI1541Yvlki4X5pRhBtg==",
   "success": true,
-  "projectFilePath": "D:\\Mindwell\\Mindwell.csproj",
+  "projectFilePath": "D:\\MindWell-Mental-Health-Assessment\\Mindwell.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lucia\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\lucia\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
