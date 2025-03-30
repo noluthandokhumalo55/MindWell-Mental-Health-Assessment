@@ -33,8 +33,11 @@ jobs:
       - name: Publish Application
         run: dotnet publish -c Release -o ./publish
 
+      - name: List contents of the publish folder
+        run: dir ./publish
+
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
           name: published-app
-          path: ./publish/
+          path: ./publish/*
