@@ -19,7 +19,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: 8.0.x # Update if using a different version
+          dotnet-version: 8.0.x 
 
       - name: Restore Dependencies
         run: dotnet restore
@@ -37,4 +37,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: published-app
-          path: ./publish
+          path: ./publish/
