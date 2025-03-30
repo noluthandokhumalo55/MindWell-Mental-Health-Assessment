@@ -1,0 +1,138 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <!-- Add Bootstrap CSS link here if not already added -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        /* Set the gradient background for the entire page */
+        body {
+            background: linear-gradient(to bottom, #e0b3f3, #ffffff); /* Light purple to white gradient */
+            height: 100vh; /* Ensure it covers the entire viewport height */
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .container-box {
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            height: 100%;
+        }
+
+        h1, h2 {
+            font-weight: bold;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="small-heading"><strong>Mental Health Assessment</strong></h1>
+        <p>Complete these validated assessments to track your mental well-being over time. Your responses are confidential and help us provide support.</p>
+
+        <div class="row" style="margin-bottom: 20px;">
+            <!-- Container 1: Depression Screening -->
+            <div class="col-md-4">
+                <div class="container-box">
+                    <i class="fas fa-heart" style="color: purple;"></i>
+                    <strong>Depression Screening</strong>
+                    <p>A 9-question assessment to evaluate depression symptoms.</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <p>Time: 5 mins</p>
+                        <button class="btn" style="background-color: purple; color: white;">Start</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Container 2: Anxiety Check -->
+            <div class="col-md-4">
+                <div class="container-box">
+                    <i class="fas fa-cloud" style="color: blue;"></i>
+                    <strong>Anxiety Check</strong>
+                    <p>Evaluate your anxiety levels with this quick assessment.</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <p>Time: 3 mins</p>
+                        <button class="btn" style="background-color: blue; color: white;">Start</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Container 3: Stress Level Test -->
+            <div class="col-md-4">
+                <div class="container-box">
+                    <i class="fas fa-thermometer-half" style="color: green;"></i>
+                    <strong>Stress Level Test</strong>
+                    <p>Measure your current stress levels.</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <p>Time: 2 mins</p>
+                        <button class="btn" style="background-color: green; color: white;">Start</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Container 4: Sleep Quality Index -->
+            <div class="col-md-4">
+                <div class="container-box">
+                    <i class="fas fa-moon" style="color: yellow;"></i>
+                    <strong>Sleep Quality Index</strong>
+                    <p>Assess your sleep patterns and quality.</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <p>Time: 2 mins</p>
+                        <button class="btn" style="background-color: yellow; color: black;">Start</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Container 5: Social Connection Scale -->
+            <div class="col-md-4">
+                <div class="container-box">
+                    <i class="fas fa-user-friends" style="color: brown;"></i>
+                    <strong>Social Connection Scale</strong>
+                    <p>Evaluate your social relationships and support.</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <p>Time: 5 mins</p>
+                        <button class="btn" style="background-color: brown; color: white;">Start</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Container 6: Well-being Assessment -->
+            <div class="col-md-4">
+                <div class="container-box">
+                    <i class="fas fa-brain" style="color: pink;"></i>
+                    <strong>Well-being Assessment</strong>
+                    <p>Comprehensive evaluation of your overall well-being.</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <p>Time: 8 mins</p>
+                        <button class="btn" style="background-color: pink; color: white;">Start</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>Assessment History</h2>
+        <!-- Add your assessment history content here -->
+    </div>
+
+</body>
+</html>

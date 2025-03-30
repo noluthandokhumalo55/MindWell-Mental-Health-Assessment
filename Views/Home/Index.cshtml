@@ -1,0 +1,109 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1 class="small-heading"><strong>Mental Health Assessment Tool</strong></h1>
+
+<div class="container">
+    <!-- Container 1: Depression Screening -->
+    <div class="row">
+        <div class="col-md-4">
+            <div class="assessment-card card">
+                <div style="display: flex; align-items: center;">
+                    <i class="fas fa-heart icon" style="color: purple; margin-right: 10px;"></i>
+                    <strong>Depression Screening</strong>
+                </div>
+                <p>Measure your anxiety levels and get personalized recommendations</p>
+                <button class="btn btn-pink">Start Assessment</button>
+            </div>
+        </div>
+
+        <!-- Container 2: Anxiety Check -->
+        <div class="col-md-4">
+            <div class="assessment-card card">
+                <div style="display: flex; align-items: center;">
+                    <i class="fas fa-cloud icon" style="color: #2196f3; margin-right: 10px;"></i>
+                    <strong>Anxiety Check</strong>
+                </div>
+                <p>Measure your anxiety levels and get personalized recommendations</p>
+                <button class="btn btn-blue">Start Assessment</button>
+            </div>
+        </div>
+
+        <!-- Container 3: Stress Level Test -->
+        <div class="col-md-4">
+            <div class="assessment-card card">
+                <div style="display: flex; align-items: center;">
+                    <i class="fas fa-thermometer-half icon" style="color: #4caf50; margin-right: 10px;"></i>
+                    <strong>Stress Level Test</strong>
+                </div>
+                <p>Evaluate your stress levels and learn coping strategies</p>
+                <button class="btn btn-green">Start Assessment</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Set the background to light purple leaning toward white */
+    body {
+        background-color: #f4e6ff;
+        padding-top: 20px; /* Add space between the header and the container */
+    }
+
+    .assessment-card {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        border-radius: 4px;
+        padding: 10px 20px;
+        color: white;
+        font-size: 14px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .btn-purple {
+        background-color: #6a4b9c;
+    }
+
+    .btn-blue {
+        background-color: #2196f3;
+    }
+
+    .btn-green {
+        background-color: #4caf50;
+    }
+
+    /* New class for pink button */
+    .btn-pink {
+        background-color: purple;
+    }
+
+    .card {
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+
+    .row {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .col-md-4 {
+        margin-bottom: 20px;
+    }
+
+    .small-heading {
+        font-size: 24px; /* Smaller font size */
+        text-align: left; /* Align text with the first container */
+        padding-left: 15px; /* Align text with the first container */
+        margin-bottom: 20px; /* Add space between the heading and containers */
+    }
+</style>

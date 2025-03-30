@@ -1,0 +1,120 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - <i class="fas fa-brain" style="color: purple;"></i> MindWell</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Mindwell.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(to right, purple, blue);
+            background-size: cover;
+        }
+
+        .login-container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-header {
+            text-align: center;
+        }
+
+            .login-header i {
+                font-size: 50px;
+                color: purple;
+            }
+
+            .login-header h2 {
+                font-weight: bold;
+                color: black;
+                font-size: 28px;
+            }
+
+            .login-header p {
+                font-size: 18px;
+                color: #555;
+            }
+
+        .form-label {
+            font-size: 14px;
+            color: black;
+        }
+
+        .form-control {
+            border-radius: 5px;
+            padding-left: 35px;
+        }
+
+            .form-control::placeholder {
+                color: #aaa;
+            }
+
+        .btn-purple {
+            background-color: purple;
+            color: white;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+            .btn-purple:hover {
+                background-color: #5a2c91;
+            }
+
+        .link-purple {
+            color: purple;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="login-header">
+            <i class="fas fa-brain" style="font-size: 50px; color: purple;"></i>
+            <h2>MindWell</h2>
+            <p>Your Health Companion</p>
+        </div>
+
+        <!-- Display Error Messages -->
+        @if (TempData["Error"] != null)
+        {
+            <div class="alert alert-danger text-center">
+                @TempData["Error"]
+            </div>
+        }
+
+        <form action="@Url.Action("Login", "Login_R")" method="post">
+            <div class="form-group mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required />
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required />
+            </div>
+
+            <button type="submit" class="btn btn-purple mb-3">Sign In</button>
+
+            <div class="text-center">
+                <a href="#" class="link-purple d-block mb-3">Forgot password?</a>
+                <p>Don't have an account? <a href="@Url.Action("Index", "Register")" class="link-purple">Sign up</a></p>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
