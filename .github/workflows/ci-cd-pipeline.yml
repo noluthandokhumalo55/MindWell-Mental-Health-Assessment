@@ -33,14 +33,18 @@ jobs:
       - name: Publish Application
         run: dotnet publish -c Release -o ./publish
 
-      - name: List contents of the publish folder
-        run: dir ./publish
-
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v2
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
         with:
-          artifact_name: published-app
-          path: ./publish/
+          path: ./publish
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+
+    steps:
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v1
