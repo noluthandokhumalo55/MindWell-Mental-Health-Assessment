@@ -15,7 +15,7 @@ MindWell is a comprehensive mental wellness web application built using ASP.NET 
 
 ## 🧰 Tech Stack
 
-- **Frontend**: HTML5, CSS3, JavaScript
+- **Frontend**: HTML/ CSS, JavaScript
 - **Backend**: ASP.NET Core MVC (C#)
 - **Database**: SQL Server
 - **Cloud Deployment**: Microsoft Azure (App Services & SQL Database)
